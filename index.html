@@ -1,154 +1,131 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Divya Sharma — Coach & Consultant</title>
-  <meta name="description" content="Portfolio & services — Divya Sharma" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divya | Brand & Strategy</title>
   <style>
-    /* ---------- Theme & utilities ---------- */
-    :root{
-      --bg-1:#efece9; /* warm cream */
-      --muted-lilac:#d9cce0; /* hero background */
-      --dusty-rose:#e9c4bf;
-      --accent-olive:#c9bd7a;
-      --text:#222;
-      --muted:#6b665f;
-      --radius-lg:28px;
-      --radius-md:14px;
-      --container:1100px;
-      --max-content-width:980px;
-      --gap:28px;
-      font-family: Georgia, "Times New Roman", serif;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #005BAC 30%, #FFD700 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #222;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      color:var(--text);
-      background:var(--bg-1);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
+    header {
+      background: rgba(0,0,0,0.85);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--container);margin:0 auto;padding:36px 20px;}
-
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{font-weight:700;font-size:20px;letter-spacing:0.6px}
-    nav{display:flex;gap:18px;align-items:center}
-    .btn{
-      display:inline-block;padding:10px 16px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);
-      background:#fff;font-weight:600;font-size:14px;cursor:pointer;
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
     }
-
-    /* ---------- HERO ---------- */
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:40px;
-      align-items:center;
-      background:var(--muted-lilac);
-      padding:60px 0;
-      border-radius:12px;
-      margin-bottom:var(--gap);
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto 0;
     }
-    .hero h1{font-size:38px;margin:0 0 12px}
-    .hero p{color:var(--muted);max-width:520px;margin:0 0 18px;font-family:inherit}
-
-    .profile{
-      width:320px;height:320px;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08);
-      background:#fff;display:flex;align-items:center;justify-content:center;
+    section {
+      background: white;
+      margin: 2rem auto;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      max-width: 900px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    .profile img{width:100%;height:100%;object-fit:cover;display:block}
-
-    /* ---------- Approach / Cases ---------- */
-    .section{
-      background:transparent;padding:40px 0;margin-bottom:var(--gap);
+    section h2 {
+      color: #005BAC;
+      margin-bottom: 1rem;
     }
-    .grid-2{display:grid;grid-template-columns:1fr 400px;gap:30px;align-items:start}
-    .card{
-      background:#fff;border-radius:18px;padding:22px;box-shadow:0 6px 20px rgba(0,0,0,0.04);
+    .about img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
     }
-
-    .case-grid{display:flex;gap:18px;flex-wrap:wrap}
-    .case{background:var(--accent-olive);border-radius:16px;padding:18px;width:220px;min-height:100px;font-size:14px}
-    .case h4{margin:0 0 8px;font-size:15px}
-
-    /* ---------- Hero wave/section separator ---------- */
-    .wave{
-      height:38px;background:linear-gradient(180deg, var(--muted-lilac) 0%, var(--bg-1) 100%);
-      margin:0;
+    .services, .testimonials, .events {
+      display: grid;
+      gap: 1.5rem;
     }
-
-    /* ---------- CTA / Contact ---------- */
-    .cta{
-      display:flex;gap:18px;align-items:center;padding:36px;border-radius:12px;background:var(--dusty-rose);
+    .card {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .cta .cta-img{width:44%;border-radius:12px;overflow:hidden}
-    .cta .cta-img img{width:100%;height:100%;object-fit:cover}
-    .cta .cta-copy{flex:1}
-    .cta .cta-copy h3{margin:0 0 8px;font-size:22px}
-    .btn-primary{
-      display:inline-block;padding:10px 16px;border-radius:999px;background:#fff;font-weight:700;
-      margin-top:14px;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.9);
+      color: white;
+      margin-top: 3rem;
     }
-
-    /* ---------- FAQ ---------- */
-    .faq{
-      display:flex;gap:30px;align-items:flex-start;
+    input, button {
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
     }
-    .faq .faq-list{flex:1}
-    .faq .faq-item{border-bottom:1px solid rgba(0,0,0,0.06);padding:14px 0;cursor:pointer;display:flex;justify-content:space-between}
-    .faq .faq-item h4{margin:0;font-family:inherit;font-size:15px}
-    .faq .faq-item .answer{display:none;padding:8px 0;color:var(--muted);font-size:14px}
-
-    /* ---------- Newsletter ---------- */
-    .newsletter{background:var(--accent-olive);border-radius:18px;padding:20px;max-width:720px;margin:30px auto}
-    .newsletter form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .input{padding:10px 12px;border-radius:999px;border:0;min-width:160px}
-    .submit{background:#000;color:#fff;padding:10px 20px;border-radius:999px;border:0;cursor:pointer}
-
-    /* ---------- Footer ---------- */
-    footer{padding:40px 0 80px;color:var(--muted);font-size:14px}
-
-    /* ---------- Responsive ---------- */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr; text-align:center}
-      .grid-2{grid-template-columns:1fr}
-      .faq{flex-direction:column}
-      .cta{flex-direction:column}
-      .cta .cta-img{width:100%;height:220px}
-      .profile{margin:0 auto}
+    button {
+      background: #FFD700;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">Divya Sharma</div>
-      <nav>
-        <a href="#approach">Approach</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="#subscribe">Subscribe</a>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
-      <div>
-        <h1>Hey, I’m Divya.</h1>
-        <p>I help small businesses and professionals with impactful speaking sessions and build meaningful careers. Strategy, workshops and 1:1 coaching to help you grow with confidence.</p>
-        <a class="btn-primary" href="#contact">Book a call</a>
-      </div>
-      <div class="profile" aria-hidden="true">
-        <!-- Replace with your portrait -->
-        <img src="images/profile.jpg" alt="Divya Sharma portrait" />
-      </div>
-    </section>
-
-    <!-- Approach + visual -->
-    <section id="approach" class="section">
+<body>  <header>
+    <h1>We Don’t Just Build Brands – We Create Movements</h1>
+    <p>Helping ambitious people and organizations in Sweden and beyond to craft meaningful brands and strategies.</p>
+  </header>  <section class="about">
+    <img src="https://via.placeholder.com/150" alt="Divya portrait">
+    <h2>About Divya</h2>
+    <p>I’m Divya, a brand strategist and creative consultant passionate about building connections that resonate. With experience across industries, I help you find clarity, purpose, and a strong brand voice.</p>
+  </section>  <section class="services">
+    <h2>What I Do</h2>
+    <div class="card">
+      <h3>Brand Strategy</h3>
+      <p>Crafting clear, compelling, and authentic strategies that resonate with your target audience.</p>
+    </div>
+    <div class="card">
+      <h3>Workshops</h3>
+      <p>Interactive sessions to uncover your brand’s unique DNA and create alignment within your team.</p>
+    </div>
+    <div class="card">
+      <h3>Speaking</h3>
+      <p>Keynotes and talks about branding, storytelling, and business culture in today’s changing world.</p>
+    </div>
+  </section>  <section class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="card">
+      <p>“Divya gave us the clarity we needed to grow our brand in Sweden. Her approach is both strategic and deeply human.” – Client</p>
+    </div>
+    <div class="card">
+      <p>“Working with Divya was transformative. She helped us align our purpose with our market.” – Entrepreneur</p>
+    </div>
+  </section>  <section class="events">
+    <h2>Workshops & News</h2>
+    <div class="card">
+      <h3>Brand Strategy 101</h3>
+      <p>Join my upcoming workshop in Stockholm to explore the essentials of building a modern brand.</p>
+    </div>
+    <div class="card">
+      <h3>Community Talks</h3>
+      <p>Free monthly online sessions connecting entrepreneurs across Sweden.</p>
+    </div>
+  </section>  <section class="newsletter">
+    <h2>Join My Newsletter</h2>
+    <p>Get insights, tools, and updates on upcoming workshops – tailored for Sweden’s creative and business scene.</p>
+    <form>
+      <input type="email" placeholder="Your email address" required>
+      <br>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>  <footer>
+    <p>© 2025 Divya | Made with 💙💛 for Sweden</p>
+  </footer></body>
+</htm    <section id="approach" class="section">
       <div class="grid-2">
         <div>
           <h2 style="font-size:28px;margin-top:0">My Approach</h2>
