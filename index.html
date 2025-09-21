@@ -1,154 +1,184 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divya | Brand & Strategy</title>
+  <title>Divya - Portfolio</title>
   <style>
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --blue: #005BAC;
+      --yellow: #FFD700;
+      --bg: #f8f9fa;
+      --text: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #005BAC 30%, #FFD700 100%);
-      background-attachment: fixed;
-      background-size: cover;
-      color: #222;
+      background: linear-gradient(135deg, var(--blue), var(--yellow));
+      color: var(--text);
+      line-height: 1.6;
     }
+
     header {
-      background: rgba(0,0,0,0.85);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: slideDown 0.8s ease;
     }
+
     header h1 {
-      font-size: 3rem;
-      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue);
     }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 1rem auto 0;
-    }
-    section {
-      background: white;
-      margin: 2rem auto;
-      padding: 3rem 2rem;
-      border-radius: 16px;
-      max-width: 900px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    section h2 {
-      color: #005BAC;
-      margin-bottom: 1rem;
-    }
-    .about img {
-      width: 150px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-    .services, .testimonials, .events {
-      display: grid;
+
+    nav ul {
+      display: flex;
+      list-style: none;
       gap: 1.5rem;
     }
-    .card {
-      background: #f9f9f9;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--blue);
+      transition: color 0.3s ease;
     }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      margin-top: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--blue);
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      width: 50px;
+      height: 4px;
+      background: var(--yellow);
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      border-radius: 2px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.85);
       color: white;
       margin-top: 3rem;
+      font-size: 0.9rem;
     }
-    input, button {
-      padding: 0.75rem;
-      margin-top: 0.5rem;
+
+    footer a {
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    /* Button styling for email */
+    .contact-btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--blue);
+      color: white;
       border-radius: 8px;
-      border: 1px solid #ddd;
+      margin-top: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
-    button {
-      background: #FFD700;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
+
+    .contact-btn:hover {
+      background: var(--yellow);
+      color: var(--blue);
     }
   </style>
 </head>
-<body>  <header>
-    <h1>We Don’t Just Build Brands – We Create Movements</h1>
-    <p>Helping ambitious people and organizations in Sweden and beyond to craft meaningful brands and strategies.</p>
-  </header>  <section class="about">
-    <img src="https://via.placeholder.com/150" alt="Divya portrait">
-    <h2>About Divya</h2>
-    <p>I’m Divya, a brand strategist and creative consultant passionate about building connections that resonate. With experience across industries, I help you find clarity, purpose, and a strong brand voice.</p>
-  </section>  <section class="services">
-    <h2>What I Do</h2>
-    <div class="card">
-      <h3>Brand Strategy</h3>
-      <p>Crafting clear, compelling, and authentic strategies that resonate with your target audience.</p>
-    </div>
-    <div class="card">
-      <h3>Workshops</h3>
-      <p>Interactive sessions to uncover your brand’s unique DNA and create alignment within your team.</p>
-    </div>
-    <div class="card">
-      <h3>Speaking</h3>
-      <p>Keynotes and talks about branding, storytelling, and business culture in today’s changing world.</p>
-    </div>
-  </section>  <section class="testimonials">
-    <h2>Testimonials</h2>
-    <div class="card">
-      <p>“Divya gave us the clarity we needed to grow our brand in Sweden. Her approach is both strategic and deeply human.” – Client</p>
-    </div>
-    <div class="card">
-      <p>“Working with Divya was transformative. She helped us align our purpose with our market.” – Entrepreneur</p>
-    </div>
-  </section>  <section class="events">
-    <h2>Workshops & News</h2>
-    <div class="card">
-      <h3>Brand Strategy 101</h3>
-      <p>Join my upcoming workshop in Stockholm to explore the essentials of building a modern brand.</p>
-    </div>
-    <div class="card">
-      <h3>Community Talks</h3>
-      <p>Free monthly online sessions connecting entrepreneurs across Sweden.</p>
-    </div>
-  </section>  <section class="newsletter">
-    <h2>Join My Newsletter</h2>
-    <p>Get insights, tools, and updates on upcoming workshops – tailored for Sweden’s creative and business scene.</p>
-    <form>
-      <input type="email" placeholder="Your email address" required>
-      <br>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>  <footer>
-    <p>© 2025 Divya | Made with 💙💛 for Sweden</p>
-  </footer></body>
-</htm    <section id="approach" class="section">
-      <div class="grid-2">
-        <div>
-          <h2 style="font-size:28px;margin-top:0">My Approach</h2>
-          <p style="color:var(--muted)">Collaborative. Clear. Cultural. I work closely with clients to create coaching plans and workshops that are practical and actionable. My sessions focus on public presence, storytelling, and building sustainable skillsets.</p>
+<body>
+  <header>
+    <h1>Divya</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-          <div style="display:flex;gap:12px;margin-top:18px">
-            <div style="flex:1" class="card">
-              <h3 style="margin:0 0 8px;font-size:16px">Collaborative</h3>
-              <p style="margin:0;color:var(--muted)">I co-create plans with you and adapt them to real business needs.</p>
-            </div>
-            <div style="flex:1" class="card">
-              <h3 style="margin:0 0 8px;font-size:16px">Practical</h3>
-              <p style="margin:0;color:var(--muted)">Hands-on exercises you can use immediately in your work.</p>
-            </div>
-          </div>
-        </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Divya, a passionate professional eager to showcase my work, skills, and experiences through this portfolio website. I love building impactful solutions and continuously learning new technologies.</p>
+  </section>
 
-        <div class="card" aria-hidden="true">
-          <!-- Replace with a photo of a notebook / laptop -->
-          <img src="images/work-desk.jpg" alt="" style="width:100%;border-radius:12px;display:block" />
-        </div>
-      </div>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Here are some of the projects I’ve worked on:</p>
+    <ul>
+      <li><strong>Project 1</strong> - Description of the project.</li>
+      <li><strong>Project 2</strong> - Description of the project.</li>
+      <li><strong>Project 3</strong> - Description of the project.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at:</p>
+    <a class="contact-btn" href="mailto:divya@example.com">divya@example.com</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Divya. All Rights Reserved. | Made with 💙💛 in Sweden theme</p>
+  </footer>
+</body>
+</html>    </section>
 
     <div class="wave" aria-hidden="true"></div>
 
